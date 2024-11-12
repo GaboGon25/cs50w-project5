@@ -1,0 +1,119 @@
+{% extends 'layout.html' %}
+
+{% block title %}Mis Semestres{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Semestres</li>
+        <li class="breadcrumb-item active" aria-current="page">Mis Semestres</li>
+    </ol>
+</nav>
+
+<div class="container my-5">
+    <h2 class="text-center text-uppercase mb-4">Semestres Inscritos</h2>
+    
+    <div class="row">
+        <!-- Card de ejemplo de semestre 1 -->
+        <div class="col-md-4 mb-4">
+            <a href="#" class="text-decoration-none">
+                <div class="card shadow-sm border-0 h-100" style="background-color: #f8f9fa;">
+                    <div class="card-body text-center p-4">
+                        <h2 class="card-title text-primary mb-3">Semestre 2024-I</h2>
+                        <p class="card-text text-muted">Ver clases inscritas en Semestre 2024-I</p>
+                        <div class="accordion" id="accordionSemester1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Clases Inscritas
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionSemester1">
+                                    <div class="accordion-body text-start">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Introduccion a la Fisica</li>
+                                            <li class="list-group-item">Calculo Diferencial</li>
+                                            <li class="list-group-item">Programacion I</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="{% url 'classes' %}"><button class="btn btn-outline-primary w-100" >Ver Detalles</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    
+        <!-- Card de ejemplo de semestre 2 -->
+        <div class="col-md-4 mb-4">
+            <a href="#" class="text-decoration-none">
+                <div class="card shadow-sm border-0 h-100" style="background-color: #f8f9fa;">
+                    <div class="card-body text-center p-4">
+                        <h2 class="card-title text-primary mb-3">Semestre 2024-II</h2>
+                        <p class="card-text text-muted">Ver clases inscritas en Semestre 2024-II</p>
+                        <div class="accordion" id="accordionSemester2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Clases Inscritas
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionSemester2">
+                                    <div class="accordion-body text-start">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Programación en Python</li>
+                                            <li class="list-group-item">Estadística Aplicada</li>
+                                            <li class="list-group-item">Literatura Española</li>
+                                            <li class="list-group-item">Electrónica Básica</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <button class="btn btn-outline-primary w-100">Ver Detalles</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    
+        <!-- Card de ejemplo de semestre 3 -->
+        <div class="col-md-4 mb-4">
+            <a href="#" class="text-decoration-none">
+                <div class="card shadow-sm border-0 h-100" style="background-color: #f8f9fa;">
+                    <div class="card-body text-center p-4">
+                        <h2 class="card-title text-primary mb-3">Semestre 2025-I</h2>
+                        <p class="card-text text-muted">Ver clases inscritas en Semestre 2025-I</p>
+                        <div class="accordion" id="accordionSemester3">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Clases Inscritas
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionSemester3">
+                                    <div class="accordion-body text-start">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Filosofía Moderna</li>
+                                            <li class="list-group-item">Diseño Gráfico</li>
+                                            <li class="list-group-item">Análisis de Circuitos</li>
+                                            <li class="list-group-item">Biología Molecular</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <button class="btn btn-outline-primary w-100">Ver Detalles</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+{% endblock %}

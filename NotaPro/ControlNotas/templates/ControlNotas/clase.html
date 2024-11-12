@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-uppercase mb-4">Clases Inscritas del Semestre</h2>
+
+    <!-- Botón de Registrar Clases -->
+    <div class="text-center mb-4">
+        <a href="{% url 'create_classes' %}" class="btn btn-primary btn-lg rounded-pill">Registrar Clases</a>
+    </div>
+
+    <div class="row justify-content-center">
+        <!-- Card para la clase de Física -->
+        <div class="col-12 mb-4">
+            <a href="{% url 'partial' %}" class="text-decoration-none">
+                <div class="card shadow border-0 rounded-4 p-3 clickable-card d-flex flex-row align-items-center" style="background: linear-gradient(135deg, #00C6FF, #0072FF); color: white;">
+                    <div class="card-body">
+                        <h5 class="card-title">Introducción a la Física</h5>
+                        <p class="card-text"><strong>Profesor:</strong> Lic. Juan Pérez</p>
+                        <p class="card-text"><strong>Tipo de curso:</strong> Curso Regular</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card para la clase de Cálculo -->
+        <div class="col-12 mb-4">
+            <a href="#" class="text-decoration-none">
+                <div class="card shadow border-0 rounded-4 p-3 clickable-card d-flex flex-row align-items-center" style="background: linear-gradient(135deg, #00C6FF, #0072FF); color: white;">
+                    <div class="card-body">
+                        <h5 class="card-title">Cálculo Diferencial</h5>
+                        <p class="card-text"><strong>Profesor:</strong> Msc. María López</p>
+                        <p class="card-text"><strong>Tipo de curso:</strong> Curso de Verano</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Card para la clase de Programación en Python -->
+        <div class="col-12 mb-4">
+            <a href="#" class="text-decoration-none">
+                <div class="card shadow border-0 rounded-4 p-3 clickable-card d-flex flex-row align-items-center" style="background: linear-gradient(135deg, #00C6FF, #0072FF); color: white;">
+                    <div class="card-body">
+                        <h5 class="card-title">Programacion I</h5>
+                        <p class="card-text"><strong>Profesor:</strong> Ing. Carlos García</p>
+                        <p class="card-text"><strong>Tipo de curso:</strong> Curso Paralelo</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- CSS para diseño en cards horizontales y rectangulares -->
+<style>
+    .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        color: #fff;
+        cursor: pointer;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+
+    .container h2 {
+        font-weight: 700;
+        color: #343a40;
+        letter-spacing: 1px;
+    }
+
+    .text-decoration-none {
+        text-decoration: none !important;
+    }
+</style>
+{% endblock %}

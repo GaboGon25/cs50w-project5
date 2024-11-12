@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}  <!-- Asegúrate de que 'base.html' sea el nombre de tu archivo de layout -->
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Header -->
+    <div class="text-center mb-4">
+        <h2 class="fw-bold text-primary">Crear Evaluación</h2>
+        <p class="text-muted">Agrega una evaluación detallada y guarda documentos importantes</p>
+    </div>
+
+    <!-- Evaluation Form Card -->
+    <div class="card shadow-lg p-4 mb-5">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Title -->
+            <div class="mb-3">
+                <label for="title" class="form-label fw-semibold">Título de la Evaluación</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Título" required>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+                <label for="description" class="form-label fw-semibold">Descripción</label>
+                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Describe la evaluación..." required></textarea>
+            </div>
+
+            <!-- Semester Selection -->
+            {% comment %} <div class="mb-3">
+                <label for="semester" class="form-label fw-semibold">Semestre</label>
+                <select class="form-select" id="semester" name="semester" required>
+                    <option selected disabled>Selecciona el semestre</option>
+                    <option>Primer Semestre</option>
+                    <option>Segundo Semestre</option>
+                    <option>Tercer Semestre</option>
+                    <option>Cuarto Semestre</option>
+                    <option>Quinto Semestre</option>
+                    <option>Sexto Semestre</option>
+                </select>
+            </div> {% endcomment %}
+
+            <!-- Partial Selection -->
+            {% comment %} <div class="mb-3">
+                <label for="partial" class="form-label fw-semibold">Parcial</label>
+                <select class="form-select" id="partial" name="partial" required>
+                    <option selected disabled>Selecciona el parcial</option>
+                    <option>Parcial 1</option>
+                    <option>Parcial 2</option>
+                    <option>Parcial 3</option>
+                    <option>Parcial 4</option>
+                </select>
+            </div> {% endcomment %}
+
+
+            <!-- Evaluation Type -->
+            <div class="mb-3">
+                <label for="evaluation_type" class="form-label fw-semibold">Tipo de Evaluación</label>
+                <select class="form-select" id="evaluation_type" name="evaluation_type" required>
+                    <option selected disabled>Selecciona el tipo</option>
+                    <option>Exposición</option>
+                    <option>Prueba Sistemática</option>
+                    <option>Trabajo</option>
+                    <option>Clase Práctica</option>
+                    <option>Avance</option>
+                    <option>Firmas</option>
+                    <option>Examen Parcial</option>
+                </select>
+            </div>
+
+            <!-- Date and Score -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="date" class="form-label fw-semibold">Fecha de Realización</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                {% comment %} <div class="col-md-6">
+                    <label for="score" class="form-label fw-semibold">Puntaje</label>
+                    <input type="number" class="form-control" id="score" name="score" min="0" max="100" placeholder="Ej: 85" required>
+                </div> {% endcomment %}
+                <div class="col-md-6">
+                    <label for="evaluation_value" class="form-label fw-semibold">Valor de la Evaluación</label>
+                    <input type="number" class="form-control" id="evaluation_value" name="evaluation_value" placeholder="Ej: 7" required>
+                </div>
+            </div>
+
+            {% comment %} <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="received_score" class="form-label fw-semibold">Nota Recibida (Pendiente)</label>
+                    <input type="text" class="form-control" id="received_score" name="received_score" placeholder="Nota (x)" readonly>
+                    <small class="form-text text-muted">Se completará al recibir la calificación.</small>
+                </div>
+            </div>
+ {% endcomment %}
+
+            <!-- Document Upload -->
+            {% comment %} <div class="mb-3">
+                <label for="documentation" class="form-label fw-semibold">Documentación (PDF, Word, etc.)</label>
+                <input type="file" class="form-control" id="documentation" name="documentation" accept=".pdf,.doc,.docx">
+            </div> {% endcomment %}
+
+            <!-- Image Upload -->
+            {% comment %} <div class="mb-3">
+                <label for="image" class="form-label fw-semibold">Imagen de la Evaluación (Opcional)</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+            </div> {% endcomment %}
+
+            <!-- Submit Button -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary px-5 py-2 fw-bold shadow-sm">Guardar Evaluación</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

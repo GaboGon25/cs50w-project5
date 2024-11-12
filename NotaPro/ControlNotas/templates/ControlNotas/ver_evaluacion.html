@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="mb-4 text-center display-4 font-weight-bold">Evaluaciones Programadas</h1>
+
+    <!-- Botón para Crear Evaluación -->
+    <div class="text-center mb-5">
+        <a href="{% url 'create_evaluation' %}" class="btn btn-gradient btn-lg px-4" role="button">
+            <i class="fas fa-plus-circle"></i> Crear Evaluación
+        </a>
+    </div>
+    
+    <div class="row">
+        <!-- Tarjeta de Evaluación 1 -->
+        <div class="col-12 mb-4">
+            <a href="{% url 'evaluation_detail' %}" class="card-link" style="text-decoration: none;">
+                <div class="card p-4" style="border-radius: 20px; background-color: #24305e;">
+                    <h5 class="text-white font-weight-bold">Exposición de Proyecto</h5>
+                    <p class="text-white mb-1"><strong>Fecha de Realización:</strong> 2024-12-15</p>
+                    <p class="text-white mb-1"><strong>Valor:</strong> 20%</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Tarjeta de Evaluación 2 -->
+        <div class="col-12 mb-4">
+            <a href="#" class="card-link" style="text-decoration: none;">
+                <div class="card p-4" style="border-radius: 20px; background-color: #24305e;">
+                    <h5 class="text-white font-weight-bold">Prueba Sistemática</h5>
+                    <p class="text-white mb-1"><strong>Fecha de Realización:</strong> 2025-01-10</p>
+                    <p class="text-white mb-1"><strong>Valor:</strong> 30%</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Tarjeta de Evaluación 3 -->
+        <div class="col-12 mb-4">
+            <a href="#" class="card-link" style="text-decoration: none;">
+                <div class="card p-4" style="border-radius: 20px; background-color: #24305e;">
+                    <h5 class="text-white font-weight-bold">Trabajo de Investigación</h5>
+                    <p class="text-white mb-1"><strong>Fecha de Realización:</strong> 2025-02-05</p>
+                    <p class="text-white mb-1"><strong>Valor:</strong> 25%</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Tarjeta de Evaluación 4 -->
+        <div class="col-12 mb-4">
+            <a href="#" class="card-link" style="text-decoration: none;">
+                <div class="card p-4" style="border-radius: 20px; background-color: #24305e;">
+                    <h5 class="text-white font-weight-bold">Examen Final</h5>
+                    <p class="text-white mb-1"><strong>Fecha de Realización:</strong> 2025-03-10</p>
+                    <p class="text-white mb-1"><strong>Valor:</strong> 25%</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Estilo del botón de Crear Evaluación */
+    .btn-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Estilo de las tarjetas */
+    .modern-card {
+        background: #f9f9f9;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .modern-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Estilos adicionales */
+    .text-dark {
+        color: #333 !important;
+    }
+    .text-muted {
+        color: #555 !important;
+    }
+    .card-link:hover .card {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+   
+</style>
+
+{% comment %} <style>
+    .card-link:hover .card {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+</style> {% endcomment %}
+{% endblock %}

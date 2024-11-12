@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg rounded-4 border-0">
+                <div class="card-header text-center bg-primary text-white rounded-top-4">
+                    <h2 class="fw-bold mb-1">Welcome to NotaPro</h2>
+                    <p class="mb-0">Create your account</p>
+                </div>
+                <div class="card-body px-5 py-4">
+                    {% if message %}
+                        <div class="alert alert-danger text-center" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                    <form action="{% url 'register' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group mb-3">
+                            <label for="username" class="fw-semibold">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                                <input class="form-control border-start-0" autofocus type="text" name="username" placeholder="Enter your username">
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email" class="fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                                <input class="form-control border-start-0" type="email" name="email" placeholder="Enter your email address">
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password" class="fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                                <input id="password" class="form-control border-start-0" type="password" name="password" placeholder="Enter your password">
+                                <span toggle="#password" class="fa fa-eye-slash toggle-password input-group-text bg-white border-start-0" style="cursor: pointer;"></span>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="confirmation" class="fw-semibold">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                                <input id="confirmation" class="form-control border-start-0" type="password" name="confirmation" placeholder="Confirm your password">
+                                <span toggle="#confirmation" class="fa fa-eye-slash toggle-password input-group-text bg-white border-start-0" style="cursor: pointer;"></span>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary btn-lg rounded-3" type="submit">Create Account</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-4">
+                        <small class="text-muted">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none text-primary">Log In here</a>.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Script to toggle password visibility
+    document.querySelectorAll('.toggle-password').forEach(function(element) {
+        element.addEventListener('click', function() {
+            const input = document.querySelector(element.getAttribute('toggle'));
+            if (input.type === 'password') {
+                input.type = 'text';
+                element.classList.remove('fa-eye-slash');
+                element.classList.add('fa-eye');
+            } else {
+                input.type = 'password';
+                element.classList.remove('fa-eye');
+                element.classList.add('fa-eye-slash');
+            }
+        });
+    });
+</script>
+
+{% endblock %}

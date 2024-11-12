@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>Detalles de la Evaluación</h2>
+            <p class="mb-0">Revisa la información detallada de tu evaluación y accede a los documentos importantes.</p>
+        </div>
+        <div class="card-body p-5">
+            <!-- Título -->
+            <div class="mb-4">
+                <h4 class="text-secondary">Título de la Evaluación:</h4>
+                <p class="h5 text-dark">Nombre de la Evaluación</p>
+            </div>
+
+            <!-- Descripción -->
+            <div class="mb-4">
+                <h4 class="text-secondary">Descripción:</h4>
+                <p class="text-muted">Esta evaluación cubre los temas principales de la materia...</p>
+            </div>
+
+            <!-- Semestre y Parcial -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h4 class="text-secondary">Semestre:</h4>
+                    <p class="text-dark">2024 - Primer Semestre</p>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-secondary">Parcial:</h4>
+                    <p class="text-dark">Parcial 1</p>
+                </div>
+            </div>
+
+            <!-- Tipo de Evaluación y Fecha de Realización -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h4 class="text-secondary">Tipo de Evaluación:</h4>
+                    <p class="text-dark">Examen Parcial</p>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-secondary">Fecha de Realización:</h4>
+                    <p class="text-dark">15/09/2024</p>
+                </div>
+            </div>
+
+            <!-- Valor de la Evaluación -->
+            <div class="mb-4">
+                <h4 class="text-secondary">Valor de la Evaluación:</h4>
+                <p class="text-dark">7 puntos</p>
+            </div>
+
+            <!-- Documentación -->
+            {% comment %} <div class="mb-4">
+                <h4 class="text-secondary">Documentación:</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">Descargar Documento</a>
+            </div> {% endcomment %}
+
+            <!-- Calificación Obtenida (Editable) -->
+            <div class="mb-4">
+                <h4 class="text-secondary">Calificación Obtenida:</h4>
+                <input type="text" class="form-control" placeholder="Ingresa la calificación obtenida">
+            </div>
+
+            <!-- Imagen/Documento de la Evaluación -->
+            {% comment %} <div class="mb-4">
+                <h4 class="text-secondary">Imagen/Documento de la Evaluación:</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">Ver Imagen o Documento</a>
+            </div>
+        </div> {% endcomment %}
+        
+        <div class="card-footer text-center bg-light">
+            <button class="btn btn-primary">Editar Evaluación</button>
+            <button class="btn btn-danger">Eliminar Evaluación</button>
+            <button class="btn btn-success">Registrar Nota</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
